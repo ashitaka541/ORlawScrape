@@ -67,9 +67,9 @@ with ThreadPoolExecutor(max_workers=10) as executor:
         if page_number in excluded_pages:
             continue
 
-        url = f"{base_url}{page_number}.aspx"
+        url = f"{base_url}{page_number}.html"
         executor.submit(fetch_and_process_page, url)
 
     for additional_page in additional_pages:
-        url = f"{base_url}{additional_page}.aspx"
+        url = f"{base_url}{additional_page}.html"
         executor.submit(fetch_and_process_page, url)
